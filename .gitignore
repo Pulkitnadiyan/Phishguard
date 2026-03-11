@@ -1,0 +1,28 @@
+# General
+.DS_Store
+*.log
+.env
+.idea/
+.vscode/
+
+# Node.js (Frontend)
+node_modules/
+dist/
+build/
+.npm/
+
+# Java / Maven (Backend)
+target/
+*.class
+*.jar
+*.war
+.mvn/
+
+# Python (ML Service)
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.venv/
+.env/
