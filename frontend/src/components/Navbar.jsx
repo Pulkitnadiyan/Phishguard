@@ -46,6 +46,7 @@ const Navbar = () => {
                         <Link to="/" onClick={closeMenu} className="hover:text-accent transition">Home</Link>
                         <Link to="/check-url" onClick={closeMenu} className="hover:text-accent transition">Check URL</Link>
                         <Link to="/report" onClick={closeMenu} className="hover:text-accent transition">Report</Link>
+                        <Link to="/awareness" onClick={closeMenu} className="hover:text-accent transition">Awareness</Link>
                     </div>
 
                     <div className="flex flex-col md:flex-row items-center w-full md:w-auto space-y-4 md:space-y-0 md:space-x-4 border-t border-gray-700 md:border-t-0 pt-4 md:pt-0">

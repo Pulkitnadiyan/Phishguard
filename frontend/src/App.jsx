@@ -8,6 +8,7 @@ import Report from './pages/Report';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import AdminDashboard from './pages/AdminDashboard';
+import Awareness from './pages/Awareness';
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
                         <Route path="/login" element={<Login />} />
                         <Route path="/dashboard" element={<Dashboard />} />
                         <Route path="/admin" element={<AdminDashboard />} />
+                        <Route path="/awareness" element={<Awareness />} />
                     </Routes>
                 </main>
                 <Footer />
