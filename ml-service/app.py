@@ -17,6 +17,10 @@ except Exception as e:
     print(f"Error loading model: {e}")
     model = None
 
+@app.route('/', methods=['GET'])
+def home():
+    return jsonify({"status": "running", "message": "PhishGuard ML Service is active. Use POST /predict to analyze URLs."})
+
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.json
