@@ -20,9 +20,11 @@ public class PhishingController {
 
     @PostMapping("/check-url")
     public ResponseEntity<?> checkUrl(@RequestBody UrlRequest request) {
-        String email = org.springframework.security.core.context.SecurityContextHolder.getContext().getAuthentication()
-                .getName();
-        com.phishguard.model.User user = userRepository.findByEmail(email).orElse(null);
+        org.springframework.security.core.Authentication auth = org.springframework.security.core.context.SecurityContextHolder.getContext().getAuthentication();
+        com.phishguard.model.User user = null;
+        if (auth != null && auth.getName() != null && !auth.getName().equals("anonymousUser")) {
+            user = userRepository.findByEmail(auth.getName()).orElse(null);
+        }
 
         Prediction prediction = phishingService.checkUrl(request.getUrl(), user);
         return ResponseEntity.ok(prediction);
